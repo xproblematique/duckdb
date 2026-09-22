@@ -40,7 +40,7 @@ static void EnableLogging(ClientContext &context, TableFunctionInput &data, Data
 	}
 
 	if (!bind_data.storage_config.empty()) {
-		log_manager.UpdateLogStorageConfig(*context.db, bind_data.storage_config);
+		log_manager.UpdateLogSinkConfig(*context.db, bind_data.storage_config);
 	}
 }
 
@@ -136,7 +136,7 @@ static void DisableLogging(ClientContext &context, TableFunctionInput &data, Dat
 
 //! Truncate the current log storage
 static void TruncateLogs(ClientContext &context, TableFunctionInput &data, DataChunk &output) {
-	context.db->GetLogManager().TruncateLogStorage();
+	context.db->GetLogManager().TruncateLogSink();
 }
 
 static unique_ptr<FunctionData> BindDisableLogging(ClientContext &context, TableFunctionBindInput &input,

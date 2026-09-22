@@ -195,7 +195,7 @@ static const ConfigurationOption internal_options[] = {
     DUCKDB_SETTING_CALLBACK(LogQueryPathSetting),
     DUCKDB_GLOBAL(LoggingLevel),
     DUCKDB_GLOBAL(LoggingMode),
-    DUCKDB_GLOBAL(LoggingStorage),
+    DUCKDB_GLOBAL(LoggingSink),
     DUCKDB_SETTING(MaxExecutionTimeSetting),
     DUCKDB_SETTING(MaxExpressionDepthSetting),
     DUCKDB_GLOBAL(MaxMemorySetting),
@@ -255,6 +255,7 @@ static const ConfigurationOption internal_options[] = {
 
 static const ConfigurationAlias setting_aliases[] = {DUCKDB_SETTING_ALIAS("configure_metrics", 31),
                                                      DUCKDB_SETTING_ALIAS("custom_profiling_settings", 31),
+                                                     DUCKDB_SETTING_ALIAS("log_storage", 129),
                                                      DUCKDB_SETTING_ALIAS("memory_limit", 132),
                                                      DUCKDB_SETTING_ALIAS("null_order", 63),
                                                      DUCKDB_SETTING_ALIAS("profile_output", 156),
